@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phonetech</title>
+
+    <!-- Font Awesome -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts Roboto -->
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <script src="js/EventoTecla.js"></script>
+    <link rel="stylesheet" href="css/mdb.min.css"/>
+    <link rel="stylesheet" href="css/hola.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</head>
+<body>
+
+
+<!--Main Navigation-->
+<header>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="Index.html">PhoneTech </a>
+
+            <!-- Toggle button -->
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Link -->
+                <li class="nav-item"><a class="nav-link" href="Index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="Tienda.html">Tienda</a></li>
+                <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="SobreNosotros.html">Acerca De</a></li>
+            </ul>
+
+            <!-- Icons -->
+            <ul class="navbar-nav d-flex flex-row me-1">
+                <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg"><i
+                            class="fas fa-shopping-cart"></i></a>
+                </li>
+
+                <button id="registrar" type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModal" data-whatever="@mdo">Registrarse
+                </button>
+                <button type="button" class="btn btn-primary" onclick="CambiarColor()">Color</button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="text-center mb-4">Iniciar Sesión</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <form action="#" class="login-form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control rounded-left"
+                                               placeholder="Nombre de Usuario" required>
+                                    </div>
+                                    <div class="form-group d-flex">
+                                        <input type="password" class="form-control rounded-left"
+                                               placeholder="Contraseña" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <a type="btn btn-primary" href="Administrador.html"
+                                           class="form-control btn btn-primary rounded submit px-3">Iniciar Sesión</a>
+                                    </div>
+                                    <div class="form-group d-md-flex">
+                                        <div class="w-50">
+                                            <label class="checkbox-wrap checkbox-primary">Recuérdame
+                                                <input type="checkbox" checked>
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                        <div class="w-50 text-md-right">
+                                            <a href="#">¿Olvidaste tu Contraseña?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Carrito</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="cart">
+
+                                    <ul class="cart-list"></ul>
+                                    <p class="total">Total: Bs <span id="cart-total">0.00</span></p>
+                                    <button id="comprar">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </ul>
+
+
+        </div>
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <header class="uno">
+
+        <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+        <div class="overlay"></div>
+
+        <!-- The HTML5 video element that will create the background video on the header -->
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="img/Galaxy%20S23%20Series%20Unveiling%20Samsung.mp4" type="video/mp4">
+        </video>
+
+        <!-- The header content -->
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-3" id="titulo">PhoneTech</h1>
+                    <p class="lead mb-0" id="subtitulo">Elije uno a tus necesidades</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+</header>
+
+
+<!-- Products -->
+<section>
+    <div class="container my-5">
+        <header class="mb-4">
+            <h3 id="productos">Nuevos Productos</h3>
+        </header>
+
+        <div class="row">
+            <div class="product-list">
+                <div class="product" data-id="1">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/iphone-15-pro-max-review-esquire-65095f09647c8.jpg?crop=0.5xw:1xh;center,top&resize=640:*"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>iPhone 15 Pro Max</p>
+                    <p class="description">El último iPhone con características increíbles.</p>
+                    <p class="price">$20.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+                <div class="product" data-id="2">
+                    <img src="https://images.samsung.com/is/image/samsung/africa-en-galaxy-a30-a305-sm-a305fzbexfe-backblue-151841029?$720_576_JPG$"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>Galaxy A30</p>
+                    <p class="description">Un smartphone Android potente con pantalla AMOLED.</p>
+                    <p class="price">$25.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="3">
+                    <img src="https://fdn.gsmarena.com/imgroot/news/18/10/google-trolls-pixel-ultra/-728/gsmarena_000.jpg"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Pixel Ultra</p>
+                    <p class="description">El teléfono Google con la mejor calidad de cámara.</p>
+                    <p class="price">$30.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="4">
+                    <img src="https://i.blogs.es/efb544/1366_2000/450_1000.jpg"
+                         class="card-img-top rounded-2" style=" height: 300px; width: 250px">
+                    <p>Pixel 6 Pro</p>
+                    <p class="description">El teléfono Google con la mejor cámara hasta ahora.</p>
+                    <p class="price">$40.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+
+
+            </div>
+
+            <div class="product-list">
+                <div class="product" data-id="5">
+                    <img src="https://oasis.opstatics.com/content/dam/oasis/page/2021/9-series/compare/in/compare/9-pro/9pPineGreen.png"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>OnePlus Pro 9</p>
+                    <p class="description">Un teléfono con rendimiento excepcional y carga ultrarrápida.</p>
+                    <p class="price">$35.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="6">
+                    <img src="data:image/jpeg;base64,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"
+                         class="card-img-top rounded-2" style=" height: 300px; width: 250px">
+                    <p>Xperia XZ4</p>
+                    <p class="description">Diseño elegante y resistente con una potente cámara triple.</p>
+                    <p class="price">$28.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="7">
+                    <img src="https://www.tiendaamiga.com.bo/media/catalog/product/cache/deb88dadd509903c96aaa309d3e790dc/e/0/e06627_celular-note10-pro_1.jpg"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Redmi Note 10</p>
+                    <p class="description">Un smartphone asequible con una gran batería y pantalla Full HD.</p>
+                    <p class="price">$15.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="8">
+                    <img src="https://i0.wp.com/bitstorebolivia.com/wp-content/uploads/2023/04/Motorola-Moto-G-Power-2022-1.jpg?fit=1000%2C1000&ssl=1"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>Moto G Power</p>
+                    <p class="description">Increíble duración de la batería para un uso prolongado.</p>
+                    <p class="price">$22.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Products -->
+
+<!-- Features -->
+<section>
+    <div class="container">
+        <div class="card p-4 bg-primary">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h4 class="mb-0 text-white">Los mejores celulares y marcas en la tienda</h4>
+                    <p class="mb-0 text-white-50">Los mas vendidos</p>
+                </div>
+                <div class="col-auto"><a class="btn btn-white text-primary shadow-0" href="#">Discover</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Features -->
+
+<!-- Recommended -->
+<section>
+    <div class="container my-5">
+        <header class="mb-4">
+            <h3 id="recomendados">Recomendados</h3>
+        </header>
+
+        <div class="row">
+            <div class="product-list">
+                <div class="product" data-id="9">
+                    <img src="https://i.blogs.es/6348c4/huawei-nova-10-frente/450_1000.jpg"
+                         class="card-img-top rounded-2" style=" height: 300px; width: 250px">
+                    <p>Huawei Nova X</p>
+                    <p class="description">Un smartphone elegante con tecnología de cámara avanzada.</p>
+                    <p class="price">$32.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="10">
+                    <img src="https://estaticos-cdn.sport.es/clip/90e5308e-dd45-4100-a66d-c770129ec5f1_alta-libre-aspect-ratio_default_0.jpg"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>LG Velvet Plus</p>
+                    <p class="description">Diseño sofisticado con una experiencia visual envolvente.</p>
+                    <p class="price">$38.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="11">
+                    <img src="https://m.media-amazon.com/images/I/31yCbFwuUPS._SL500_.jpg"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Xiaomi Mi 11 Lite</p>
+                    <p class="description">Un teléfono ligero con potentes capacidades de fotografía.</p>
+                    <p class="price">$27.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="12">
+                    <img src="data:image/jpeg;base64,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"
+                         class="card-img-top rounded-2" style=" height: 300px; width: 250px">
+                    <p>Samsung A52s 5G</p>
+                    <p class="description">Experiencia 5G con una pantalla Super AMOLED vibrante.</p>
+                    <p class="price">$45.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Recommended -->
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="container">
+            <div class="row d-flex">
+                <!-- Left -->
+                <div class="col-md-6 col-sm-12 mb-2 mb-md-0 d-flex justify-content-center justify-content-md-start">
+                    <div class="">
+                        <div class="input-group" style="max-width: 400px;">
+                            <input type="email" class="form-control border" placeholder="Email" aria-label="Email"
+                                   aria-describedby="button-addon2"/>
+                            <button class="btn btn-light border" type="button" id="button-addon2"
+                                    data-mdb-ripple-color="dark">
+                                Suscribete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left -->
+            </div>
+        </div>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5 mb-4">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-12 col-lg-3 col-sm-12">
+                    <!-- Content -->
+                    <a href="" target="_blank" class="ms-md-2">
+                        <img src="https://images.vexels.com/media/users/3/204690/isolated/preview/ccb652d1ca11908eeb950eb670c02619-telefono-celular-sonando-icono-azul.png"
+                             height="35"/>
+                    </a>
+                    <p class="mt-3">
+                        © 2023 Copyright: Phontech.com.
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <!-- Links -->
+                    <h6 class="text-uppercase text-dark fw-bold mb-2">
+                        Tienda
+                    </h6>
+                    <ul class="list-unstyled mb-4">
+                        <li><a class="text-muted" href="SobreNosotros.html">Acerca De</a></li>
+                        <li><a class="text-muted" href="Tienda.html">Tienda</a></li>
+                        <li><a class="text-muted" href="Contacto.html">Contacto</a></li>
+                        <li><a class="text-muted" href="Index.html">Inicio</a></li>
+                    </ul>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-12 col-sm-12 col-lg-3">
+                    <!-- Links -->
+                    <h6 class="text-uppercase text-dark fw-bold mb-2">Nuestras aplicaciones</h6>
+                    <a href="#" class="mb-2 d-inline-block"> <img
+                            src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/misc/btn-appstore.webp"
+                            height="38"/></a>
+                    <a href="#" class="mb-2 d-inline-block"> <img
+                            src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/misc/btn-market.webp"
+                            height="38"/></a>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+
+</footer>
+<!-- Footer -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="js/CambiarColor.js"></script>
+<script src="js/EventoTecla.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+<script src="js/comprar.js"></script>
+<script src="js/app.js"></script>
+<!--<script src="js/jqueryFun.js"></script>-->
+</body>
+</html>

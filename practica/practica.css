@@ -1,0 +1,48 @@
+section{
+    display: flex;
+    width: 600px;
+    height: 430px;
+   
+
+}
+section img{
+    
+    width: 100px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: 1s ease;
+}
+section img:hover{
+    cursor: crosshair;
+    width: 400px;
+    opacity: 1;
+    filter: contrast(120%);
+    
+}
+.lider img{
+    width: 100px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: 1s ease;
+    margin: 1em;
+    border-radius: 10px;
+
+}
+.slider{
+    aspect-ratio: 10 / 16;
+    width: 400px;
+    position: relative;
+    display: flex;
+    overflow: scroll;
+   
+}
+.slider img .s-1{
+    width: 200px;
+    left: 0;
+    position: sticky;
+    object-fit: cover;
+    border-radius: 6px;
+    scroll-snap-align: center;
+}
